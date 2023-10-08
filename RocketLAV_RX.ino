@@ -50,13 +50,19 @@ void loop() {
   if (rx.tick()) {
     dataPackStruct DataPack ;            
     if (rx.readData(DataPack)) {  
-      
-      Serial.println("Time: " + DataPack.t);
-      Serial.println("AccelX: " + DataPack.ax);
-      Serial.println("AccelY: " + DataPack.ay);
-      Serial.println("AccelZ: " + DataPack.az);
-      Serial.println ("HIGHT: " + DataPack.alti);
-      Serial.println ("TEMP: " + DataPack.temp);
+       
+      Serial.print("TIME: ");
+      Serial.println(DataPack.t);
+      Serial.print("AccelX: ");
+      Serial.println(DataPack.ax);
+      Serial.print("AccelY: ");
+      Serial.println(DataPack.ay);
+      Serial.print("AccelZ: ");
+      Serial.println(DataPack.az);
+       Serial.print("HIGHT: ");
+      Serial.println (DataPack.alti);
+       Serial.print("TEMP: ");
+      Serial.println (DataPack.temp);
       Serial.println();
     } else {
       Serial.println("Wrong data");
